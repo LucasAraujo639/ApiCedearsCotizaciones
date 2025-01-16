@@ -1,7 +1,7 @@
 from typing import Union
 import requests
 from lxml import html
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from bs4 import BeautifulSoup
 from fastapi.middleware.cors import CORSMiddleware
 
