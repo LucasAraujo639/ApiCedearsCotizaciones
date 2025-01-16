@@ -11,7 +11,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Cambia "*" por la URL específica de tu frontend en producción
+    allow_origins=[
+        "exp://192.168.30.142:8081",  # IP local del frontend 
+        "http://192.168.30.100:8000"  # IP local del backend
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -45,7 +48,7 @@ urls_cedears = ['https://iol.invertironline.com/titulo/cotizacion/BCBA/AL30D/BON
  ]
 names_cedears = ['AL30', 'SPY', 'EEM', 'MELI', 'BABA', 'NKE', 'MCD', 'AMZN','GGAL','IWM', 'BRKB', 'MRCLO', 'NIO', 'V', 'VIST', 'ABNB', 'TCOM', 'JD', 'UBER', 'GOOGL', 'MSFT', 'META']
 
-# Función para obtener el precio de la página
+# Funcion para obtener el precio de cada CEDEAR de la pagina de IOL
 def get_price_from_page():
     try:
         resultado = []
