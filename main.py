@@ -72,3 +72,6 @@ def read_root():
     quotes = get_price_from_page()
     return quotes
 
+@app.get("/")
+async def health_check():
+    return "The health check is successful"
